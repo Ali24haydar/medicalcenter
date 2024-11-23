@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --light: #f6f6f9;
+    --primary: #0051a1;
+    --light-primary: #9fc3e7;
+    --grey: #e0e5e9;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+  --light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.left
+{
+  display: flex;
+  justify-content:flex-start ;
+}
+.photo img
+{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bx{
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--grey);
+    overflow-x: hidden;
+}
+
+.btn{
+    padding: 5px 20px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    box-shadow: 3px 5px 12px #555;
+}
+
+.btn:hover{
+    background: var(--light);
+    color: var(--primary);
+}
+
+.content{
+    transition: all 0.3s ease;
+}
+
+.content main{
+    width: 100%;
+    padding: 36px 24px;
+    max-height: calc(100vh - 56px);
+}
+
+.content main .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 16px;
+    flex-wrap: wrap;
+}
+
+.content main .header .left h1{
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: var(--dark);
+}
+
+.content main .header .left .breadcrumb{
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+.content main .header .left .breadcrumb li{
+    color: var(--dark);
+}
+
+.content main .header .left .breadcrumb li a{
+    color: var(--dark-grey);
+    pointer-events: none;
+}
+
+.content main .header .left .breadcrumb li a.active{
+    color: var(--primary);
+    pointer-events: none;
+}
+.content main .header .left .forCall
+{
+    font-size: 19px;
+}
+.content main .header .left .forCall i
+{
+    color: #0051a1;
+    padding-right: 4px;
+    filter: drop-shadow(0px 0px 4px var(--light-primary));
+}
+
+.content main .header .report{
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    box-shadow: 3px 5px 12px #555;
+}
+
+.content main .header .report:hover{
+    background: var(--light);
+    color: var(--primary);
+}
+
+.content main .bottom-data{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.content main .bottom-data>div{
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+}
+
+.content main .bottom-data .header{
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.content main .bottom-data .header h3{
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.content main .bottom-data .header .bx{
+    cursor: pointer;
+}
+
+.content main .bottom-data .appBook{
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.content main .bottom-data .feedbacks{
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.content main .bottom-data .feedbacks .task-list{
+    max-height: 400px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.content main .bottom-data .feedbacks .task-list li{
+    width: 100%;
+    margin-bottom: 16px;
+    background: var(--grey);
+    padding: 14px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content main .bottom-data .feedbacks .task-list li .task-title{
+    display: flex;
+    align-items: center;
+}
+
+.content main .bottom-data .feedbacks .task-list li .task-title p{
+    margin-left: 6px;
+}
+
+.content main .bottom-data .feedbacks .task-list li .bx{
+  cursor: pointer;  
+}
+
+.content main .bottom-data .feedbacks .task-list li.completed{
+    border-left: 10px solid var(--primary);
+}
+
+.content main .bottom-data .feedbacks .task-list li.not-completed{
+    border-left: 10px solid var(--primary);
+}
+
+.content main .bottom-data .feedbacks .task-list li:last-child{
+   margin-bottom: 0;
+}
+.addfb
+{
+    background-color: #0051a1;
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--light);
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .message {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input
+   {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    background: var(--grey);
+  }
+  .content main .bottom-data .task-list li .delete_feedback{
+    background: none;
+    border: none;
+    color: var(--dark);
+}
+
+.content main .bottom-data .task-list li .delete_feedback:hover{
+    color: var(--danger);
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+/*     .content main .bottom-data .header{
+        min-width: 340px;
+    }
+
+    .content main .bottom-data .orders table{
+        min-width: 340px;
+    }
+
+    .content main .bottom-data .feedbacks .task-list{
+        max-width: 340px;
+    } */
+
+    .content main .header .left h1 
+    {
+        font-size: 25px;
+    }
+
+}
+
+@media(max-width: 450px) 
+{
+   /*  .content main .bottom-data .header{
+        min-width: 280px;
+    } */
+    .content main .header .left h1 
+    {
+        font-size: 25px;
+    }
+    .photo img {
+        width: 85px;
+        height: 85px;
+    }
+    .content main .header .left h1 {
+        font-size: 20px;
+    }
+    .content main .header .left .breadcrumb i
+    {
+        font-size: 18px;
+    }
+}
+@media(max-width: 376px) 
+{
+   /*  .content main .bottom-data .header{
+        min-width: 280px;
+    }
+
+    .content main .bottom-data .orders table{
+        min-width: 280px;
+    }
+
+    .content main .bottom-data .feedbacks .task-list{
+        min-width: 280px;
+    } */
+    .content main .header .left h1 
+    {
+        font-size: 25px;
+    }
+    .photo img {
+        width: 85px;
+        height: 85px;
+    }
+    .content main .header .left h1 {
+        font-size: 18px;
+    }
+    .content main .header .left .breadcrumb i
+    {
+        font-size: 15px;
+    }
+    
+}
+@media(max-width: 360px) 
+{
+    .content main .header .left h1 
+    {
+        font-size: 25px;
+    }
+    .photo img {
+        width: 75px;
+        height: 75px;
+    }
+    .content main .header .left h1 {
+        font-size: 18px;
+    }
+    .content main .header .left .breadcrumb i
+    {
+        font-size: 16px;
+    }
+    .content main .header .left .breadcrumb
+    {
+        grid-gap: 12px;
+    }
+    .content main .header .left .breadcrumb  a 
+    {
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,281 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    color: #f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+body{
+    overflow-x: hidden;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+nav{
+    height: 5rem;
+    /* width: 100vw; */
+    background-color: var(--primary);
+    /* box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); */
+    box-shadow: 3px 5px 12px #555;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+   /*  justify-content: space-between; */
+/*     width: 100%;
+    height: 75px; */
+/*     align-items: center;
+    justify-content: space-between; */
+
+    /* border: 5px solid rebeccapurple; */
+}
+
+/*Styling logo*/
+.navlogo{
+    /* padding:1vh 1vw; */
+    /* text-align: start; */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.navlogo img {
+    /* height: 5rem;
+    width: 5rem; */
+
+    width: 150px;
+    height: 150px;
+    margin-left: 43px;
+
+    /* border: 1px solid yellow; */
+}
+
+
+
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    /* width: 75%; */
+    padding: 0 0.7vw;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+
+    /* border: 1px solid yellow; */
+}
+ul .dropdown_menu a{
+    color:#fff;
+}
+.nav-links .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: auto;
+}
+
+.icons{
+    display: flex;
+    /* border: 1px solid red; */
+    gap: 10px;
+    /* width: 100%; */
+    /* flex-direction: row; */
+    /* margin-right: 20px; */
+
+    display: flex;
+    list-style: none; 
+    /* width: 88vw; */
+    /* width: 75%; */
+    padding: 0 0.7vw;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+
+    /* border: 1px solid yellow; */
+}
+
+/* .icons i{
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: transform .4s;
+} */
+
+.nav-links .links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: var(--light);
+    font-family: 'Poppins', sans-serif;
+}
+.nav-links .links li a:hover {
+    color: var(--light-primary);
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links .links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: var(--light-primary);
+    position: absolute;
+    bottom: 0;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links .links li a:hover::before{
+    width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button{
+    color: var(--light);
+    background-color: transparent;
+    border: 1.5px solid var(--light);
+    border-radius: 2em;
+    padding: 0.4rem 1rem;
+    /* padding: 0.6rem 0.8rem; */
+    /* margin-left: 2vw; */
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.login-button i{
+    margin-right: 5px;
+}
+
+.login-button:hover {
+    color: var(--dark);
+    background-color: var(--light);
+    border:1.5px solid var(--light);
+    transition: all ease-in-out 350ms;
+}
+.join-button{
+    color: var(--light);
+    background-color: var(--light-primary);
+    border: 1.5px solid var(--light-primary);
+    border-radius: 2em;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: var(--light);
+    background-color: transparent;
+    border:1.5px solid var(--light);
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+
+    /* border: 1px solid green; */
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 950px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: var(--primary);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+        justify-content: space-evenly;
+        margin-top: 5rem;
+    }
+    .nav-links .links{
+        flex-direction: column;
+        /* gap: 30px; */
+        margin: 0;
+        height: 45%;
+    }
+    .icons{
+        align-items: start;
+        height: 40%;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* Arabic */ 
+[dir="rtl"] .navlogo img {
+    margin-right: 43px;
+}

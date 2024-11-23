@@ -1,0 +1,395 @@
+:root {
+    --light: #f6f6f9;
+    --primary: #0051a1;
+    --light-primary: #9fc3e7;
+    --grey: #e0e5e9;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+	--light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mainContent
+{
+    position: relative;
+    left: 230px;
+    width: calc(100% - 230px);
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center
+{
+    height: fit-content;
+    width: fit-content;
+    background:var(--light);
+    border-radius: 10px;
+    padding: 100px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+ h2
+{
+    color:var(--dark);
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}
+.title
+{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    height: 20%;
+}
+.title1
+{
+    position:relative;
+    height: fit-content;
+    width: fit-content;
+}
+.title1 img
+{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-top: 30px;
+}
+ .title1 i {
+    color: var(--primary);
+    font-size: 21px;
+    padding-left: 3px;
+    padding-top: 10px;
+ }
+.title1:hover i
+{
+    cursor: pointer;
+}
+.round{
+    position: absolute;
+    bottom:10px;
+    right:10px;
+    background: rgb(207, 206, 206);
+    width: 40px;
+    height: 40px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }
+.title2
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+.title2i
+{
+    border-bottom: 1px solid black;
+}
+.title2 .title2i input
+{
+    outline:none;
+    border: none;
+    background-color: var(--light);
+    font-size: 20px;
+}
+.changepass
+{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.changepass form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#forpass2
+{
+    display: flex;
+    flex-direction: column;
+    max-width: inherit;
+}
+#forpass3
+{
+    display: flex;
+    flex-direction: column;
+    max-width: inherit;
+
+}
+.error
+{
+    
+    max-width:450px;
+    font-size: 15px;
+
+}
+.emailerror
+{
+    display:none;
+    color: red;
+}
+.phoneerror
+{
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-top: 0px;
+}
+.changepass .div
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.changepass .div label
+{
+    width: 180px;
+    align-self: center;
+}
+.changepass input
+{
+    outline:none;
+    border:1px solid var(--dark-grey);
+    width:200px;
+    height: 30px;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.submit{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.submit .submitBtn{
+    border: none;
+    color: white;
+    background: var(--primary);
+    width: 100px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s transform;
+}
+
+.submit .submitBtn:hover
+{
+    transform: scale(1.1);
+    background-color: var(--light-primary);
+} 
+.divsubmit
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.submitinfo
+{
+    border: none;
+    color:white;
+    background: rgb(97, 97, 97);
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s transform;
+    border-radius: 10px;
+}
+.submitinfo:hover
+{
+    transform: scale(1.1);
+    background-color: rgb(146, 146, 146);
+} 
+
+
+@media(max-width:1441px)
+{
+    .sidebar.close + .mainContent
+{
+    width: calc(100% - 70px);
+    left: 70px;
+    transition:0.5s;
+}
+
+.center
+{
+    padding: 10px 100px;
+}
+}
+
+@media(max-width:950px)
+{
+    .center
+    {
+        width: 90%;
+        height: 90%;
+        padding: 20px 20px;
+       
+    }
+
+    
+
+    .changepass h3 
+    {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .title2 .title2i input
+    {
+        font-size: 15px;
+    }
+    .title2i
+    {
+        width: 230px;
+    }
+   
+    .changepass input
+    {
+        width: 220px;
+    }
+    .changepass label
+    {
+        font-size: 16px;
+    }
+/*     #submit
+    {
+        margin-left:230px;
+    } */
+}
+@media(max-width:611px)
+{
+   /*  .center2
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+    } */
+    .mainContent
+    {
+        
+    width: calc(100% - 90px);
+    left: 70px;
+    }
+/*     #submit
+    {
+        margin-left:200px;
+    } */
+}
+@media(max-width:550px)
+{
+    .mainContent{
+        height: 100%;
+        padding: 5px 0;
+    }
+
+    .title
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .title2
+    {
+        margin-top: 0px;
+    }
+    .changepass
+    {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .changepass .div
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submit{
+        flex-direction: row !important;
+        align-items: end !important;
+    }
+
+    .changepass h3 
+    {
+        font-size: 13px;
+    }
+/*     #submit
+    {
+        margin-left:160px;
+    } */
+    .changepass .div label
+    {
+        font-size: 15px;
+        width:80%;
+    }
+
+    .changepass .div input{
+        width: 90%;
+    }
+}
+
+@media(max-width:450px)
+{
+    .title
+    {
+        width: 100%;
+        gap: 2px;
+    }
+    .title2
+    {
+        width: 90%;
+    }
+
+        .title2 .title2i input
+    {
+        width: 80%;
+    }
+
+    .title2i
+    {
+        width: 100%;
+    }
+}
+
+@media(max-height:600px){
+    .mainContent{
+        height: 100%;
+        padding: 5px 0;
+    }
+}

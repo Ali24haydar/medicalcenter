@@ -1,0 +1,363 @@
+:root {
+    --light: #f6f6f9;
+    --primary: #0051a1;
+    --light-primary: #9fc3e7;
+    --grey: #e0e5e9;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+	--light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+}
+.main-content{
+    position: relative;
+    margin-left: 15px;
+    width: calc(100% - 230px);
+    left: 230px;
+}
+
+.sidebar.close~.main-content{
+    width: calc(100% - 70px); 
+    left: 70px;
+    transition:0.5s;
+}
+
+.title h2
+{
+    color:var(--dark);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-top: 20px;
+    margin-left: 20px;
+    /* margin-bottom: 20px; */
+   
+}
+.leftright
+{
+    display:flex;
+    /* margin-top: 80px; */
+    margin-top: 30px;
+    gap: 30px;
+}
+.left form
+{
+    margin: 30px;
+}
+#eid
+{
+    display: none;
+}
+.appId
+{
+    display: none;
+}
+.left
+{
+    background-color: var(--light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 30%;
+    /* height: 80vh; */
+    flex: 1;
+    align-self: stretch;
+
+    align-items: center;
+    justify-content: start;
+    margin-right: 30px;
+}
+.txt
+{
+    display: flex;
+    flex-direction: column;
+}
+.txt label
+{
+    color:var(--dark);
+    margin: 10px;
+}
+.txt input
+{
+    width: 250px;
+    height: 35px;
+    color:var(--dark); 
+    border: 1px solid #ccc; 
+    padding: 8px;
+    border-radius: 4px; 
+    font-size: 16px; 
+    margin: 10px;
+}
+.forcomplete
+{
+    color: green;
+    font-size: 20px;
+}
+
+.btn
+{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+.btn input
+{
+    width: 100px;
+    height: 30px;
+    border:1px solid #ccc ;
+    background-color: var(--primary);
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+
+}
+.right 
+{
+    background-color: var(--light);
+    border-radius: 20px;
+    width: 70%;
+    /* height: 80vh; */
+    align-self: stretch;
+}
+.right .tablediv
+{
+    /* height: 60vh; */
+    height: 80%;
+    overflow-y: scroll;
+    margin-top: 40px;
+}
+.right .table{
+    width: 100%; 
+}
+.right .table td
+{
+    text-align: center;
+    padding: 10px;
+}
+
+.right .table th{
+    text-align: center;
+    height: 60px;
+    border-bottom: 1px solid var(--grey);
+}
+.titlesearch
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.titlesearch h2
+{
+    color:var(--dark);
+    font-weight: 700;
+    font-size: 2rem;
+   
+}
+.titlesearch .searchbox
+{
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 40px;
+}
+.titlesearch .searchbox input
+{
+    border: none;
+    margin-left: 10px;
+    padding-left: 10px;
+    outline: none;
+    background-color: var(--light);
+}
+.titlesearch .searchbox i
+{
+    padding-right: 10px;
+}
+td a 
+{
+    font-weight:400 ;
+    color: #0051a1;
+    font-size: 17px;
+}
+#edit
+{
+    display: none;
+}
+@media(max-width:1115px)
+{
+    .right
+{
+    width: 60%;
+}
+.left
+{
+    width: 40%;
+}
+.right td 
+{
+    padding: 5px;
+}
+.titlesearch h2 
+{
+    font-size: 1.5rem;
+}
+.titlesearch .searchbox input 
+{
+    width: 125px;
+}
+.leftright
+{
+    gap: 8px;
+}
+.title h2
+{
+    font-size: 1.5rem;
+}
+.txt input
+{
+    width: 190px;
+}
+
+}
+@media(max-width:950px)
+{
+    .leftright
+    {
+        flex-direction: column;
+    }
+    .left
+    {
+        width: 90%;   
+        position: relative;
+    }
+    .right
+    {
+        width: 90%;
+    }
+    .right td 
+{
+    padding: 5px;
+}
+.titlesearch h2 
+{
+    font-size: 1.7rem;
+}
+.titlesearch .searchbox input 
+{
+    width: 150px;
+    height: 30px;
+}
+.title h2
+{
+    font-size: 2rem;
+}
+.txt input
+{
+    width: 260px;
+}
+}
+@media(max-width:700px)
+{
+    .titlesearch h2 
+{
+    font-size: 1.3rem;
+}
+.titlesearch .searchbox 
+{
+    height: 33px;
+}
+.titlesearch .searchbox input 
+{
+    width: 120px;
+    height: 20px;
+}  
+}
+#suggestions-container {
+    position: absolute;
+    width: 250px;
+    margin-top: -10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color:white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    border-radius: 5px;
+    z-index: 100;
+    top: 197px;
+}
+
+
+#suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+#suggestions-list a
+{
+    text-decoration:none;
+    color: black;
+}
+
+#suggestions-list li:hover {
+    background-color: #f2f2f2;
+}
+
+@media(max-width:611px)
+{
+    .main-content
+    {
+        width: calc(100% - 100px); 
+        left: 70px;
+    }
+    .left
+    {
+        width: 100%;
+    }
+    .right
+    {
+        width: 100%;
+    }
+}
+@media(max-width:425px)
+{
+    .right td
+    {
+        font-size: 12px;
+    }
+    .right th
+    {
+        font-size: 13px;
+    }
+    .titlesearch h2 
+    {
+        font-size: 1rem;
+    }
+    .titlesearch .searchbox 
+    {
+        height: 30px;
+    }
+    .titlesearch .searchbox input 
+    {
+        width: 100px;
+        height: 19px;
+    }  
+    .txt input
+{
+    width: 200px;
+}
+.title h2 {
+    font-size: 1.5rem;
+}
+}

@@ -1,0 +1,203 @@
+.footer{
+    height: 100%;
+    width:100%;
+    background-color: var(--primary);
+    padding: 50px 0 50px 50px; 
+}
+footer .grid-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.footer .footer-column1 .logo{
+    width: 170px;
+    height: 160px;
+} 
+.footer-column1 p{
+    font-weight: 100;
+    font-size: 15px;
+    font-style: normal;
+    text-align: justify;
+    line-height: 21px;
+    color: #fff;
+}
+.footer-column2, 
+.footer-column3, 
+.footer-column4{
+    padding-top: 35px;
+}
+.footer-column2{
+    padding-left: 75px;
+}
+h4{
+    font-size: 18px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+hr{
+    border: 1px solid #fff;
+    opacity: 0.8;
+    width: 20%;
+    margin-bottom: 25px;
+}
+.footer-column2 .footer-links li a, 
+.footer-column3 .opening-hour li, 
+.footer-column4 .footer-links li a{
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+}
+.footer-column4 .footer-links li a{
+    padding-bottom:0px;
+}
+.footer-column2 .footer-links li a:hover, 
+.footer-column4 .footer-links li a:hover{
+    color: var(--light-primary);
+    padding-left: 10px;
+}
+span.Mon {
+    padding-left: 8px;
+}
+span.Tue, span.Thu {
+    padding-left: 13px;
+}
+span.Wed {
+    padding-left: 5px;
+}
+span.Fri {
+    padding-left: 24px;
+}
+span.Sat, span.Sun {
+    padding-left: 15px;
+}
+.footer-links ul li a i{
+    padding-right: 10px;
+}
+.footer-column4 ul.social-icons li{
+    display: inline-block;
+    cursor: pointer;
+    list-style-type: none;
+    margin-right: 10px;
+}
+.footer-column4 ul.social-icons i{
+    color: #fff;
+    transition: transform .4s;
+}
+.footer-column4 ul.social-icons i:hover{
+    color: var(--light-primary);
+    transform: scale(1.1);
+}
+.box-copyright{
+    border-top: 1px solid rgb(255,255,255,0.5);
+    background-color: var(--primary);
+    height: 50px;
+}
+.container-copyright{
+    max-width: 1270px;
+    margin: auto;
+}
+.box-copyright .copyright-text{
+    color: #fff;
+    font-size: 13px;
+    padding-top: 15px; 
+}
+
+/* Responsive on width 1920px */
+@media(max-width: 1920px){
+    .container-copyright {
+        margin: 0 50px;
+    }
+}
+/* Responsive on width 1440px */
+@media(max-width: 1440px){
+    .container-copyright {
+        max-width: 1440px;
+    }
+}
+/* Responsive on width 768px */
+@media(max-width: 768px){
+    .footer{
+        padding: 50px 20px;
+    }
+    footer .grid-container {
+        grid-template-columns: 50% 50%;
+    }
+    .footer-column4 {
+        margin-left: 77px;
+    }
+    .container-copyright {
+        margin: 0;
+    }
+    .box-copyright .copyright-text {
+        padding-left: 20px;
+    }
+}
+/* Responsive on width 425px */
+@media(max-width: 425px){
+    .footer{
+        padding:20px;
+    }
+    footer .grid-container {
+        grid-template-columns: 100%;
+    }
+    .footer-column2, .footer-column4{
+        margin-left:0px;
+    }
+    .footer-column2, 
+    .footer-column3, 
+    .footer-column4 {
+        padding-top: 15px;
+        margin-top: 0;
+    }
+    .footer-column2 {
+        padding-left: 0px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    .footer-column2 .footer-links li a, 
+    .footer-column3 .opening-hour li, 
+    .footer-column4 .footer-links li a,
+    .footer-column1 p {
+        font-size: 15px;
+    }
+    .box-copyright .copyright-text {
+        padding-left: 20px;
+    }
+}
+/* Responsive on width 375px */
+@media(max-width: 375px){
+    .box-copyright{
+        height: 70px;
+    }
+    .box-copyright .copyright-text {
+        padding-right: 10px;
+    }
+}
+
+/* Arabic */
+[dir="rtl"] .footer{
+    padding: 50px 50px 50px 0; 
+}
+
+[dir="rtl"] .footer-column2{
+    padding-right: 75px;
+}
+[dir="rtl"]  .footer-column2 .footer-links li a:hover, 
+.footer-column4 .footer-links li a:hover{
+    padding-right: 10px;
+}
+[dir="rtl"]  .footer-links ul li a i{
+    padding-left: 10px;
+}
+[dir="rtl"]  .footer-column4 ul.social-icons li{
+    margin-left: 10px;
+}
+
+
+

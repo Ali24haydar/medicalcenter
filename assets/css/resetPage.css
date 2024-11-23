@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,body {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    background-color: #f6f6f981;
+}
+.form-container {
+    padding: 20px 5px;
+    border-radius: 15px;
+    border: 2px solid #aaaaaa7c;
+    box-shadow: 2px 2px 8px #5555554d;
+    width: 600px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+}
+
+.button{
+  width: 100%;
+  max-width: 380px;
+  background-color: #0051a1;
+  border: none;
+  outline: none;
+  height: 55px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.button:hover{
+  background-color: #9fc3e7;
+}
+
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field.name.first{
+  grid-column: 1 / 2;
+}
+
+.input-field.name.last{
+  grid-column: 2 / 3;
+}
+
+.input-field.name{
+  width: 100%;
+  max-width: 180px;
+}
+.display{
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  max-width: 380px;
+}
+.message{
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(196, 0, 0);
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+
+
+@media(max-width:640px){
+  .form-container{
+    width: 80%;
+    padding: 0;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  form{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

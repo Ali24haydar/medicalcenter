@@ -1,0 +1,257 @@
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* max-width: 350px; */
+    background-color: var(--light);
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .title {
+    /* font-size: 28px; */
+    font-size: 20px;
+    color: #0051a1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #0051a1;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: #0051a1;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message{
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: #0051a1;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline #0051a1;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+
+.flex2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.flex3 {
+  display: flex;
+  width: inherit;
+  justify-content:space-evenly;
+  align-items: center;
+  gap: 6px;
+}
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input
+   {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    background: var(--grey);
+    font-weight: 600;
+    color: var(--dark);
+    resize: none;
+  }
+
+  .form label input[type="date"]
+  {
+   padding: 10px 10px 20px 10px;
+   outline: 0;
+   border: 1px solid rgba(105, 105, 105, 0.397);
+   border-radius: 10px;
+   background: var(--grey);
+ }
+  
+  .form label .input + span{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+
+  .form label .input + p{
+    position: absolute;
+    left: 10px;
+    bottom: 15px !important;
+    color: grey;
+    font-size: 0.7em;
+    font-weight: 600;
+    cursor: text;
+    transition: 0.3s ease;
+    visibility: hidden;
+  }
+
+  .form label .input + .imgError{
+    bottom: 2px !important;
+  }
+
+  .form label select{
+    color: #0051a1 !important;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .form label .s2{
+    color: #0051a1;
+    font-size: .8rem;
+    font-weight: 500;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span{
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+
+    .form label .input:focus + .sm,.form label .input:valid + .sm{
+      font-size: 0.5em !important;
+      font-weight: 700 !important;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+
+  .form label .input.required + span {
+    color: red;
+  }
+
+  .form label .input.required {
+    border: 1px solid red;
+  }
+
+  .form label .input + p.count {
+    visibility: visible;
+    color: red;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: #0051a1;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    cursor: pointer;
+  }
+  
+  .submit:hover {
+    background-color: #9fc3e7;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  .view{
+   /*  display: block; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .filterContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 450px) {
+    .message{
+      font-size: 12px;
+    }
+
+    .flex3 input[type= "text"]{
+      width: 160px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 6px;
+    }
+
+    .form {  
+      padding: 5px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .message{
+      font-size: 9px;
+    }
+
+    .flex2 {
+      gap: 5px;
+    }
+  }

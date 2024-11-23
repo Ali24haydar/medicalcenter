@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --light: #f6f6f9;
+    --primary: #0051a1;
+    --light-primary: #9fc3e7;
+    --grey: #e0e5e9;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+	--light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--grey);
+    overflow-x: hidden;
+}
+
+.bx{
+    font-size: 1.7rem;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--light);
+    width: 230px;
+    height: 100%;
+    z-index: 2000;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar.close{
+    width: 70px;
+}
+
+.sidebar .sidebar-header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar .sidebar-header .bx.bx-menu{
+   position: absolute;
+   margin: 0 5px;
+   left: 90%;
+   line-height: 50px;
+   transform: translateX(-50%);
+   cursor: pointer;
+   z-index: 1000;
+}
+
+.sidebar.close .sidebar-header .bx.bx-menu{
+    left: 50%;
+}
+
+.sidebar .sidebar-header .logo{
+    font-size: 24px;
+    font-weight: 700;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    z-index: 500;
+    box-sizing: content-box;
+    opacity: 1;
+}
+
+.sidebar.close .sidebar-header .logo{
+    opacity: 0;
+}
+
+.sidebar .logo .logo-name span{
+    color: var(--dark);
+}
+
+.sidebar .user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sidebar .user .user-img{
+    width: 60px;
+    border-radius: 100%;
+    margin: 15px 5px 10px;
+}
+
+.sidebar .user .user-name{
+    font-weight: 500;
+}
+
+.sidebar .user .user-clinic{
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.sidebar.close .user .user-name,.sidebar.close .user .user-clinic{
+    opacity: 0;
+}
+
+.sidebar .logo .bx{
+    z-index: 500;
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+.sidebar .side-menu{
+    width: 100%;
+    margin-top: 48px;
+}
+
+.sidebar .side-menu li{
+    height: 48px;
+    background: transparent;
+    margin-left: 6px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+}
+
+.sidebar .side-menu li.active{
+    background: var(--grey);
+    position: relative;
+}
+
+.sidebar .side-menu li.active::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--grey);
+    z-index: -1;
+}
+
+.sidebar .side-menu li.active::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--grey);
+    z-index: -1;
+}
+
+.sidebar .side-menu li a{
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li.active a,
+.sidebar .side-menu li:hover a{
+    background: var(--primary);
+    color: var(--grey);
+    box-shadow: 3px 5px 12px #555;
+}
+
+.sidebar.close .side-menu li a{
+    width: calc(48px - (4px * 2));
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li a .bx{
+    min-width: calc(60px - ((4px + 6px) * 2));
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.sidebar .side-menu .log-li a.logout{
+    color: var(--danger);
+}
+
+.sidebar .side-menu .log-li:hover a.logout{
+    color: var(--grey);
+    background: var(--danger);
+    box-shadow: 3px 5px 12px #555;
+}
+
+.sidebar.close~.content{
+    width: calc(100% - 100px); 
+    left: 70px;
+}
+
+.content{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-left: 15px;
+    width: calc(100% - 230px);
+    left: 230px;
+    transition: all 0.3s ease;
+}
+
+.content .left-side{
+    grid-column: 1 / 2;
+    margin: 0 15px;
+}
+
+.content .right-side{
+    grid-column: 2 / 3;
+    margin: 0 10px;
+    padding: 0 20px;
+}
+
+.content h3{
+    color: var(--dark);
+    margin: 10px;
+}
+
+.content .patient-info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background: var(--light);
+    border-radius: 15px;
+    text-align: center;
+    color: var(--dark);
+   /* width: 600px;*/
+    margin-bottom: 30px;
+}
+
+.content .patient-info .left{
+    padding: 10px;
+    border-right: 1px solid var(--grey);
+}
+
+.content .patient-info .left .name{
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 10px 0;
+}
+
+.content .patient-info .left h5{
+    margin: 10px 0;
+}
+
+.content .patient-info .left .email,
+.content .patient-info .left .apps label{
+    color: var(--dark-grey);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.content .patient-info .left .apps{
+    margin: 15px 0;
+}
+
+.content .patient-info .left .apps td{
+    border-right: 1px solid var(--dark-grey);
+    padding: 0 15px;
+    padding-right: 30px;
+    width: 200px;
+}
+
+.content .patient-info .left .apps td:last-child{
+    border-right: none;
+    padding-right: 0;
+}
+
+.content .patient-info .right{
+    text-align: center;
+    padding: 10px;
+}
+
+.content .patient-info .right .info{
+    text-align: center;
+    width: 100%;
+}
+
+.content .patient-info .right .info .cell
+{
+    margin: 5px;
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content .patient-info .right .info td{
+    border-bottom: 1px solid var(--grey);
+}
+
+.content .patient-info .right .info .cell label{
+    color: var(--dark-grey);
+}
+
+.content .patient-info .right button{
+    width: 200px;
+    height: 45px;
+    color: var(--light);
+    background: var(--primary);
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all .3s ease-in-out;
+}
+
+.content .patient-info .right button:hover{
+    background: var(--light-primary);
+}
+
+.content .apps-table{
+    margin-top: 15px;
+    color: var(--dark);
+    height: auto;
+}
+
+.content .apps-table table{
+    font-size: 15px;
+    background: var(--light);
+    margin-top: 10px;
+    border-radius: 15px;
+    width: 100%;
+   /* width: 600px; */
+    border-collapse: collapse;
+    border-spacing: 5px 0;
+    cursor: pointer;
+}
+
+.content .apps-table table tr{
+    width: 100%;
+}
+
+.content .apps-table table th{
+    width: 150px;
+    height: 50px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.content .apps-table table td{
+    height: 60px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.content .apps-table table td span{
+    border-radius: 50px;
+    padding: 5px 10px;
+    color: var(--light);
+    font-size: 12px;
+}
+
+.content .apps-table table td .completed{
+    background: var(--success);
+}
+
+.content .apps-table table td .accepted{
+    background: var(--primary);
+}
+
+.content .apps-table table td .pending{
+    background: var(--warning);
+}
+
+.content .apps-table table td .rejected{
+    background: var(--danger);
+}
+
+.content .apps-table table tr td{
+    transition: transform .4s;
+}
+
+.content .apps-table table tr:hover td{
+    transform: scale(1.1);
+    background: var(--grey);
+    box-shadow: 3px 5px 12px #555;
+}
+
+.content .right-side .notes{
+    position: relative;
+    margin: 50px 0px;
+    height: 91%;
+    background: var(--light);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.content .notes h2{
+    text-align: center;
+    color: var(--primary);
+}
+
+.content .notes button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 30px;
+    width: 100px;
+    background: var(--primary);
+    color: var(--light);
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content .notes button:hover{
+    background: var(--light-primary);
+}
+
+.content .notes .page{
+    height: inherit;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+}
+
+.content .notes .page form{
+    margin: 20px 5px;
+}
+
+.content .notes .page label{
+    font-size: 12px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-right: 5px;
+    width: 70px;
+}
+
+.content .notes .page .inputs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.content .notes .page .inputs .input-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .notes .page input{
+    background: none;
+    width: 120px;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    color: var(--dark);
+    font-weight: 400;
+    outline: none;
+}
+
+.content .notes .page form textarea{
+    width: 100%;
+    margin-top: 15px;
+    outline: none;
+    padding: 10px;
+    color: var(--dark);
+    font-weight: 500;
+    border: none;
+}
+
+.content .notes .page .signature{
+    display: flex;
+    justify-content: end;
+}
+
+.content .notes .page .signature label{
+    font-size: 15px;
+}
+
+.content .notes .page .signature input{
+    border-bottom: none;
+}
+
+
+/* Responsive */
+
+@media(max-width:1224px){
+
+    .content .notes .page .inputs{
+        justify-content:left;
+    }
+
+    .content .notes .page .inputs .input-field{
+        margin-right: 10px;
+    }
+
+    .content .notes .page input{
+        width: 60%;
+    }
+
+    .content .notes .page label{
+        width: 37%;
+    }
+}
+
+@media(max-width:1000px){
+
+    .sidebar~.content{
+        width: calc(100% - 230px); 
+        left: 215px;
+    }
+
+    .content{
+        display: block;
+    }
+
+    .content .right-side{
+        padding: 0;
+        margin: 10px 20px;
+    }
+
+    .content .left-side{
+        margin: 0 20px;
+    }
+
+    .content .notes{
+        min-height: 480px;
+    }
+
+    .content .notes .page .inputs{
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:650px){
+
+    .content{
+        margin: 10px;
+    }
+
+    .content .patient-info,
+    .content .apps-table{
+        overflow-x: scroll;
+    }
+
+    .content .apps-table table{
+        min-width: 400px;
+    }
+
+}
+
+@media(max-width:610px){
+    .sidebar{
+        width: 70px;
+    }
+
+    .sidebar .logo,.sidebar .logo-name,
+    .sidebar .user-clinic,.sidebar .user-name{
+        opacity: 0;
+    } 
+
+    .sidebar .side-menu li a{
+        width: calc(48px - (4px * 2));
+        transition: all 0.3s ease;
+    }
+
+    .sidebar .sidebar-header .bx.bx-menu{
+        display: none;
+    }
+
+    .sidebar~.content{
+        width: calc(100% - 100px); 
+        left: 70px;
+    }
+
+}
+
+@media(max-width:490px){
+    .content .patient-info{
+        overflow-x: scroll;
+    }
+
+    .content .apps-table{
+        overflow-x: scroll;
+    }
+
+    .content .apps-table table{
+        min-width: 400px;
+    }
+}
+
+@media(max-width:380px){
+    .content .notes{
+        display: none;
+    }
+}
